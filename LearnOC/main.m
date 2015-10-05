@@ -7,11 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XYZPerson.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSMutableString *muty = [NSMutableString stringWithString: @"Barb"];
+        XYZPerson *barbPerson = [XYZPerson personWithFirstName:muty];
+        [barbPerson sayHello];
+        XYZPerson *cansonPerson = [XYZPerson personWithFirstName:@"Canson"];
+        [cansonPerson sayHello];
+        barbPerson.spouse = cansonPerson;
+        cansonPerson.spouse = barbPerson;
     }
     return 0;
 }
